@@ -23,5 +23,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  function setThemeBasedOnPreference() {
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+    if (prefersDarkScheme.matches) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+
+    toggleButtonEmoji(); // Update the emoji based on current mode
+  }
+
   themeToggleBtn.addEventListener("click", toggleTheme);
+  setThemeBasedOnPreference(); // Set theme based on user preference
 });
