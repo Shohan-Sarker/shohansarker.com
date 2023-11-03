@@ -80,7 +80,7 @@ body.dark-mode {
 .footer {
   font-size: 1rem;
   align-self: flex-end;
-  position: end;
+  position: static;
 }
 .footer-text {
   color: #221a02;
