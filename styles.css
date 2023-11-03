@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Lora&display=swap");
+body {
+  background-color: #8e8c88; /* Background color in light mode */
+  color: #2c2020; /* Text color in light mode */
+  margin: 2rem; /* Equivalent to 20 pixels (1.25 * 16px) */
+  font-size: 2rem;
+  font-family: "Lora", serif; /* Use Alegreya for the body text */
+  text-align: center;
+}
+h1,
+h2,
+h3 {
+  font-family: "Lato", serif; /* Use Prata for headings */
+  text-align: center;
+  font-size: 5rem;
+  margin: 4rem;
+}
+body.dark-mode {
+  background-color: #182830; /* Background color in dark mode */
+  color: #dcd939; /* Text color in dark mode */
+}
+.theme-toggle-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: #333333; /* Background color in light mode */
+  color: #a8b2d1; /* Text color in light mode */
+}
+.theme-toggle-btn:hover {
+  background-color: #2d2f33; /* Hover color in light mode */
+}
+.dark-mode .theme-toggle-btn {
+  background-color: #001524; /* Background color in dark mode */
+  color: #ffffff; /* Text color in dark mode */
+}
+@keyframes buttonClickAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.theme-toggle-btn.clicked {
+  animation: buttonClickAnimation 0.5s;
+}
+.link-text {
+  color: #221a02;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: underline;
+  pointer-events: none;
+}
+.social-icons {
+  width: 3rem;
+  height: 3rem;
+  margin: 0.5rem;
+  pointer-events: all;
+}
+.pointer {
+  pointer-events: all;
+}
+.dark-mode .link-text {
+  color: #98ff98;
+}
+.socials {
+  display: flex;
+  flex-direction: column;
+  height: 65vh;
+}
+.footer {
+  font-size: 1rem;
+  align-self: flex-end;
+  position: end;
+}
+.footer-text {
+  color: #221a02;
+  pointer-events: all;
+}
+.dark-mode .footer-text {
+  color: #98ff98;
+}
