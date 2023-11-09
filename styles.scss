@@ -1,7 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Lora&display=swap");
+
+$background-color-light: #ecd69f;
+$text-color-light: #2c2020;
+$background-color-dark: #182830;
+$text-color-dark: #dcd939;
+$button-background-color-light: #333333;
+$button-text-color-light: #a8b2d1;
+$button-hover-color-light: #2d2f33;
+$button-background-color-dark: #001524;
+$button-text-color-dark: #ffffff;
+$link-text-color-light: #221a02;
+$link-text-color-dark: #98ff98;
+$footer-text-color-light: #221a02;
+$footer-text-color-dark: #98ff98;
+
 body {
-  background-color: #ecd69f;
-  color: #2c2020;
+  background-color: $background-color-light;
+  color: $text-color-light;
   margin: 2rem;
   font-size: 2rem;
   font-family: "Lora", serif;
@@ -26,15 +41,16 @@ h3 {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  background-color: #333333;
-  color: #a8b2d1;
-}
-.theme-toggle-btn:hover {
-  background-color: #2d2f33;
+  background-color: $button-background-color-light;
+  color: $button-text-color-light;
+
+  &:hover {
+    background-color: $button-hover-color-light;
+  }
 }
 
 .link-text {
-  color: #221a02;
+  color: $link-text-color-light;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,7 +82,7 @@ h3 {
 }
 
 .footer-text {
-  color: #221a02;
+  color: $footer-text-color-light;
   pointer-events: all;
 }
 
@@ -81,23 +97,25 @@ h3 {
     transform: scale(1);
   }
 }
+
 .theme-toggle-btn.clicked {
   animation: buttonClickAnimation 0.5s;
 }
 
 body.dark-mode {
-  background-color: #182830;
-  color: #dcd939;
-}
-body.dark-mode .theme-toggle-btn {
-  background-color: #001524;
-  color: #ffffff;
-}
-body.dark-mode .link-text {
-  color: #98ff98;
-}
-body.dark-mode .footer-text {
-  color: #98ff98;
-}
+  background-color: $background-color-dark;
+  color: $text-color-dark;
 
-/*# sourceMappingURL=styles.css.map */
+  .theme-toggle-btn {
+    background-color: $button-background-color-dark;
+    color: $button-text-color-dark;
+  }
+
+  .link-text {
+    color: $link-text-color-dark;
+  }
+
+  .footer-text {
+    color: $footer-text-color-dark;
+  }
+}
