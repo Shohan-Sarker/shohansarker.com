@@ -1,3 +1,19 @@
+@font-face {
+    font-family: 'Fraunces';
+    src: url('fonts/Fraunces/fraunces-regular.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fraunces';
+    src: url('fonts/Fraunces/fraunces-italic.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
 :root {
   --grid-unit: 1rem;
   --border-radius: 0.5rem;
@@ -7,7 +23,8 @@
 [data-theme="dark"] {
   --bg: #0d0221;
   --text: #00ff95;
-  --accent: #ff2975;
+  --accent: #DAA520;  /* Softer gold */
+  --tagline-bg: #9F91CC;  /* Pastel purple for tagline only */
   
   --github-bg: #6e7681;
   --github-shadow1: #8b949e;
@@ -27,6 +44,7 @@
   --bg: #f5e6d3;
   --text: #2d6a4f;
   --accent: #2d6a4f;
+  --tagline-bg: var(--accent);  /* Use accent color for light mode */
   
   --github-bg: #7a8490;
   --github-shadow1: #959da5;
@@ -50,7 +68,8 @@
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Courier New', monospace;
+  font-family: 'Fraunces', serif;
+  font-variation-settings: 'SOFT' 0, 'WONK' 0;
   padding: 2rem;
   min-height: 100vh;
   transition: background-color 0.3s ease;
@@ -108,13 +127,14 @@ body {
   font-size: clamp(3rem, 15vw, 7rem);
   line-height: 0.9;
   margin-bottom: 2rem;
-  font-weight: bold;
+  font-weight: 500;  /* Changed from 'bold' to 500 for medium weight */
   border-left: 8px solid var(--accent);
   padding-left: 1rem;
+  font-variation-settings: 'SOFT' 100, 'WONK' 1;
 }
 
 .tagline {
-  background: var(--accent);
+  background: var(--tagline-bg);  /* Changed from var(--accent) to new variable */
   color: var(--bg);
   padding: 1rem;
   font-size: clamp(1rem, 3vw, 1.5rem);
