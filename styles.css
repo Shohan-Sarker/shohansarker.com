@@ -80,6 +80,9 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 4rem);
 }
 
 /* Theme Toggle Button */
@@ -96,6 +99,7 @@ body {
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   transition: all 0.3s ease;
 }
@@ -259,6 +263,11 @@ body {
   text-align: center;
   padding: 6rem 0 2rem;
   opacity: 0.8;
+  margin-top: auto; /* Push footer to bottom */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .footer a {
@@ -285,12 +294,21 @@ body {
     width: fit-content;
   }
 
-  .social-link {
-    padding: 1.5rem;
+  .container {
+    min-height: calc(100vh - 2rem);
   }
 
   .social-links {
-    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem;
   }
 
   .social-link:hover {
