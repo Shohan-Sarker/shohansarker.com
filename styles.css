@@ -199,6 +199,12 @@ body {
   opacity: 0.1;
 }
 
+/* Add this after your social-link styles */
+.social-icon {
+    width: 24px;
+    height: 24px;
+}
+
 /* Social Link Colors */
 #github {
   background: var(--github-bg);
