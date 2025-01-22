@@ -34,9 +34,13 @@
   --instagram-shadow1: #ff9eb9;
   --instagram-shadow2: #c41d51;
   
-  --facebook-bg: #1877F2;
-  --facebook-shadow1: #66a9ff;
-  --facebook-shadow2: #0856c5;
+  --facebook-bg: #4267B2;  /* Changed to classic Facebook blue */
+  --facebook-shadow1: #6d8ac9;
+  --facebook-shadow2: #284c96;
+
+  --bluesky-bg: #0085FF;
+  --bluesky-shadow1: #47a9ff;
+  --bluesky-shadow2: #0066c5;
 }
 
 /* Light theme */
@@ -54,9 +58,13 @@
   --instagram-shadow1: #e74694;
   --instagram-shadow2: #9d174d;
   
-  --facebook-bg: #1a365d;
-  --facebook-shadow1: #2c5282;
-  --facebook-shadow2: #162e51;
+  --facebook-bg: #284c96;  /* Darker shade for light mode */
+  --facebook-shadow1: #4267B2;
+  --facebook-shadow2: #1a357a;
+
+  --bluesky-bg: #0066c5;
+  --bluesky-shadow1: #0085FF;
+  --bluesky-shadow2: #004a92;
 }
 
 * {
@@ -240,6 +248,18 @@ body {
 
 #facebook::before {
   background: var(--facebook-shadow2);
+}
+
+#bluesky {
+  background: var(--bluesky-bg);
+}
+
+#bluesky::after {
+  background: var(--bluesky-shadow1);
+}
+
+#bluesky::before {
+  background: var(--bluesky-shadow2);
 }
 
 .social-link:is(:hover, :focus)::after {
