@@ -276,7 +276,7 @@ body {
   transform: translateZ(10px) scale(0.98);
 }
 
-.social-link:active::after {
+social-link:active::after {
   transform: translate(4px, 4px);
 }
 
@@ -339,5 +339,27 @@ body {
 
   .social-link:hover {
     transform: translateZ(20px) scale(1.02);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .social-link {
+    transform: none !important;
+    transition: transform 0.2s ease !important;
+  }
+  
+  .social-link:hover {
+    transform: none !important;
+    scale: none !important;
+  }
+  
+  .social-link:active {
+    transform: scale(0.98) !important;
+  }
+  
+  /* Disable 3D shadow effects on mobile */
+  .social-link::before,
+  .social-link::after {
+    display: none;
   }
 }
