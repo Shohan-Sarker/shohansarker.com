@@ -87,35 +87,32 @@ body {
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding-top: 2rem;
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 4rem);
+  gap: 1.5rem;
+  height: max-content;
 }
 
 /* Theme Toggle Button */
 .theme-toggle {
-  position: fixed;
-  top: 2rem;
-  right: 2rem;
-  background: transparent;
-  color: var(--text);
-  border: 2px solid currentColor;
-  padding: 0.75rem 1rem;
-  font-family: inherit;
-  font-size: 1rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  transition: all 0.3s ease;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    color: var(--text);
+    padding: 0.75rem 1rem;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
 }
 
 .theme-toggle:hover {
-  background: var(--text);
-  color: var(--bg);
-  transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.05);
 }
 
 .theme-toggle svg {
@@ -287,9 +284,8 @@ social-link:active::after {
 /* Footer */
 .footer {
   text-align: center;
-  padding: 6rem 0 2rem;
+  padding: 2rem 0; /* Reduced from 6rem to 2rem */
   opacity: 0.8;
-  margin-top: auto; /* Push footer to bottom */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -321,7 +317,16 @@ social-link:active::after {
   }
 
   .container {
-    min-height: calc(100vh - 2rem);
+    padding-top: 0.5rem;
+    gap: 1rem;
+  }
+
+  .name {
+    margin-bottom: 1rem;
+  }
+
+  .tagline {
+    margin-bottom: 1.5rem;
   }
 
   .social-links {

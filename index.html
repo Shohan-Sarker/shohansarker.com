@@ -10,6 +10,7 @@
     <link rel="preload" href="fonts/Fraunces/fraunces-italic.ttf" as="font" type="font/ttf" crossorigin>
     
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="glass.css">
 </head>
 <body>
     <button class="theme-toggle" aria-label="Change theme">
@@ -18,30 +19,34 @@
         <span class="theme-text">LIGHT</span>
     </button>
 
-    <div class="container">
-        <h1 class="name">SHOHAN<br>SARKER</h1>
-        
-        <div class="tagline">HUMAN. LINKS BELOW.</div>
-        
-        <nav class="social-links">
-            <a href="/github" class="social-link" id="github">
-                GITHUB
-                <img src="icons/svg/github-icon.svg" class="social-icon" alt="GitHub">
-            </a>
-            <a href="/bluesky" class="social-link" id="bluesky">
-                BLUESKY
-                <img src="icons/svg/bluesky-icon.svg" class="social-icon" alt="Bluesky">
-            </a>
-            <a href="/instagram" class="social-link" id="instagram">
-                INSTAGRAM
-                <img src="icons/svg/instagram-icon.svg" class="social-icon" alt="Instagram">
-            </a>
-            <a href="/facebook" class="social-link" id="facebook">
-                FACEBOOK
-                <img src="icons/svg/facebook-icon.svg" class="social-icon" alt="Facebook">
-            </a>
-        </nav>
+    <div class="glass-container main-content">
+        <div class="container">
+            <h1 class="name">SHOHAN<br>SARKER</h1>
+            
+            <div class="tagline">HUMAN. LINKS BELOW.</div>
+            
+            <nav class="social-links">
+                <a href="/github" class="social-link" id="github">
+                    GITHUB
+                    <img src="icons/svg/github-icon.svg" class="social-icon" alt="GitHub">
+                </a>
+                <a href="/bluesky" class="social-link" id="bluesky">
+                    BLUESKY
+                    <img src="icons/svg/bluesky-icon.svg" class="social-icon" alt="Bluesky">
+                </a>
+                <a href="/instagram" class="social-link" id="instagram">
+                    INSTAGRAM
+                    <img src="icons/svg/instagram-icon.svg" class="social-icon" alt="Instagram">
+                </a>
+                <a href="/facebook" class="social-link" id="facebook">
+                    FACEBOOK
+                    <img src="icons/svg/facebook-icon.svg" class="social-icon" alt="Facebook">
+                </a>
+            </nav>
+        </div>
+    </div>
 
+    <div class="glass-container footer-container">
         <footer class="footer">
             <p>Made with &lt;3. Open Source.</p>
             <p><a href="https://github.com/Shohan-Sarker/shohansarker.com">View source on GitHub</a></p>
@@ -49,5 +54,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="glass.js"></script>
 </body>
 </html>
