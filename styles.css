@@ -245,7 +245,7 @@ body {
   font-weight: bold;
   margin-bottom: 3rem;
   width: fit-content;
-  transform: rotate(-1deg);
+  /* transform: rotate(-1deg); */  /* Removed the rotation */
 }
 
 /* Social Links */
