@@ -10,4 +10,13 @@
     min-width: 380px;
     width: 100%;
     max-width: 800px;
+    margin: 1.5rem;
+}
+
+.glass-container.footer-container {
+    padding: 0.75rem 2rem;
+    min-width: auto;
+    width: fit-content;
+    max-width: min(800px, 90vw);
+    margin: 1rem auto;
 }
