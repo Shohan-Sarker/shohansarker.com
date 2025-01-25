@@ -78,10 +78,40 @@ body {
   color: var(--text);
   font-family: 'Fraunces', serif;
   font-variation-settings: 'SOFT' 0, 'WONK' 0;
-  padding: 2rem;
+  padding: max(25px, 5vw);
   min-height: 100vh;
   transition: background-color 0.3s ease;
   perspective: 1000px;
+  overflow-x: hidden;
+}
+
+/* Dotted background pattern - base styles */
+[data-theme="dark"] body,
+[data-theme="light"] body {
+    background-image: radial-gradient(var(--text) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center center;
+    background-color: var(--bg);
+}
+
+/* Mobile-specific dot pattern */
+@media (max-width: 768px) {
+    [data-theme="dark"] body,
+    [data-theme="light"] body {
+        background-size: 25px 25px;
+        background-image: radial-gradient(var(--text) 0.75px, transparent 0.75px);
+        background-position: center center;
+    }
+}
+
+/* Extra condensed for very small screens */
+@media (max-width: 350px) {
+    [data-theme="dark"] body,
+    [data-theme="light"] body {
+        background-size: 20px 20px;
+        background-image: radial-gradient(var(--text) 0.75px, transparent 0.75px);
+        background-position: center center;
+    }
 }
 
 .container {
