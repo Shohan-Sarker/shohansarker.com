@@ -83,6 +83,10 @@ body {
   transition: background-color 0.3s ease;
   perspective: 1000px;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Dotted background pattern - base styles */
@@ -121,7 +125,24 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  height: max-content;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 960px;  /* Slightly increased from 900px */
+  margin-bottom: 2rem;  /* Reverted separation from footer */
+  min-width: min(100%, 320px);
+  padding-bottom: 3.5rem;  /* Increased to accommodate 3D effect */
+}
+
+.footer-container {
+  width: 100%;      /* Reverted to take full width */
+  max-width: 900px;  /* Reverted previous max-width */
+  margin: 0 auto;         /* Center horizontally */
 }
 
 /* Theme Toggle Button */
@@ -233,13 +254,14 @@ body {
   flex-direction: column;
   gap: 2rem;
   transform-style: preserve-3d;
+  width: 100%;  /* Make it take full width of container */
 }
 
 .social-link {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 1.75rem;  /* Slightly reduce default padding */
   text-decoration: none;
   font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: bold;
@@ -247,6 +269,7 @@ body {
   transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   position: relative;
   color: var(--bg);
+  width: 100%;  /* Make links take full width */
 }
 
 .social-link::after,
@@ -358,12 +381,14 @@ social-link:active::after {
 /* Footer */
 .footer {
   text-align: center;
-  padding: 2rem 0; /* Reduced from 6rem to 2rem */
+  padding: 2rem 0;     /* Reverted padding */
   opacity: 0.8;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+  width: auto;           /* Let it fit content */
+  white-space: nowrap;   /* Prevent text wrapping */
 }
 
 .footer a {
@@ -381,7 +406,13 @@ social-link:active::after {
 @media (max-width: 768px) {
   body {
     padding: 1rem;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
+    gap: 1rem;
+  }
+
+  .main-content {
+    margin-bottom: 2rem;  /* Slightly less separation on mobile */
+    padding-bottom: 2.5rem;  /* Slightly less padding on mobile */
   }
 
   .theme-toggle {
@@ -424,11 +455,21 @@ social-link:active::after {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.25rem;
+    padding: 1.25rem;  /* Keep existing mobile padding */
   }
 
   .social-link:hover {
     transform: translateZ(20px) scale(1.02);
+  }
+
+  .glass-container {
+    padding: 1rem 2rem;  /* Adjusted mobile padding */
+    min-width: 300px;    /* Adjusted minimum width for mobile */
+  }
+
+  .footer {
+    white-space: normal;  /* Allow wrapping on mobile */
+    padding: 0.25rem 0;   /* Even less padding on mobile */
   }
 }
 
