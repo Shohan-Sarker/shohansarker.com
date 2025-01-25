@@ -5,12 +5,12 @@
     backdrop-filter: blur(11.5px);
     -webkit-backdrop-filter: blur(11.5px);
     border: 1px solid rgba(255, 255, 255, 0.55);
-    display: inline-block;
-    padding: 1.375rem 3.5rem;
+    display: block;  /* Changed from inline-block */
+    padding: 1.375rem 3.5rem 4rem;  /* Increased bottom padding */
     min-width: 380px;
     width: 100%;
     max-width: 800px;
-    margin: 1.5rem;
+    margin: 1.5rem auto;  /* Changed to auto horizontal margins */
 }
 
 .glass-container.footer-container {
@@ -19,4 +19,5 @@
     width: fit-content;
     max-width: min(800px, 90vw);
     margin: 1rem auto;
+    display: inline-block;  /* Keep inline-block for footer */
 }
