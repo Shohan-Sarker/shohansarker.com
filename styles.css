@@ -92,7 +92,7 @@ body {
 /* Dotted background pattern - base styles */
 [data-theme="dark"] body,
 [data-theme="light"] body {
-    background-image: radial-gradient(var(--text) 1px, transparent 1px);
+    background-image: radial-gradient(var(--text) 2px, transparent 2px);
     background-size: 50px 50px;
     background-position: center center;
     background-color: var(--bg);
@@ -103,7 +103,7 @@ body {
     [data-theme="dark"] body,
     [data-theme="light"] body {
         background-size: 25px 25px;
-        background-image: radial-gradient(var(--text) 0.75px, transparent 0.75px);
+        background-image: radial-gradient(var(--text) 1.5px, transparent 1.5px);
         background-position: center center;
     }
 }
@@ -113,7 +113,7 @@ body {
     [data-theme="dark"] body,
     [data-theme="light"] body {
         background-size: 20px 20px;
-        background-image: radial-gradient(var(--text) 0.75px, transparent 0.75px);
+        background-image: radial-gradient(var(--text) 1.25px, transparent 1.25px);
         background-position: center center;
     }
 }
