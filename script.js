@@ -11,7 +11,7 @@ function initTheme() {
   
   // Set initial theme
   html.setAttribute('data-theme', initialTheme);
-  themeText.textContent = initialTheme === 'dark' ? 'LIGHT' : 'DARK';
+  themeText.textContent = initialTheme === 'dark' ? 'LIGHT' : 'NIGHT';
   
   // Handle toggle click
   themeToggle.addEventListener('click', () => {
@@ -19,7 +19,7 @@ function initTheme() {
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     
     html.setAttribute('data-theme', newTheme);
-    themeText.textContent = newTheme === 'dark' ? 'LIGHT' : 'DARK';
+    themeText.textContent = newTheme === 'dark' ? 'LIGHT' : 'NIGHT';
     localStorage.setItem('theme', newTheme);
   });
 }

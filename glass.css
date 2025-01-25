@@ -1,16 +1,66 @@
 .glass-container {
-    background: rgba(255, 255, 255, 0.13);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(11.5px);
-    -webkit-backdrop-filter: blur(11.5px);
-    border: 1px solid rgba(255, 255, 255, 0.55);
-    display: block;  /* Changed from inline-block */
-    padding: 1.375rem 3.5rem 4rem;  /* Increased bottom padding */
-    min-width: 380px;
-    width: 100%;
-    max-width: 800px;
-    margin: -1rem auto 1.5rem;  /* Added negative margin-top */
+  --glass-opacity: 0.05;  /* Reduced from 0.1 */
+  --glass-blur: 16px;
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+  --glass-radius: 16px;
+  
+  position: relative;
+  background: rgba(255, 255, 255, var(--glass-opacity));
+  border-radius: var(--glass-radius);
+  border: var(--glass-border);
+  overflow: hidden;
+  display: block;  /* Changed from inline-block */
+  padding: 1.375rem 3.5rem 4rem;  /* Increased bottom padding */
+  min-width: 380px;
+  width: 100%;
+  max-width: 800px;
+  margin: -1rem auto 1.5rem;  /* Added negative margin-top */
+}
+
+/* Glass effect base layer */
+.glass-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  z-index: -1;
+}
+
+/* Theme-specific styling */
+[data-theme="dark"] .glass-container {
+  --glass-opacity: 0.03;  /* Reduced from 0.05 */
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.03),  /* Reduced from 0.05 */
+    rgba(255, 255, 255, 0.01)   /* Reduced from 0.02 */
+  );
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="light"] .glass-container {
+  --glass-opacity: 0.05;  /* Reduced from 0.1 */
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.1),   /* Reduced from 0.2 */
+    rgba(255, 255, 255, 0.05)   /* Reduced from 0.1 */
+  );
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.05),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Fallback for browsers that don't support backdrop-filter */
+@supports not (backdrop-filter: blur(16px)) {
+  .glass-container {
+    background: rgba(255, 255, 255, 0.6);  /* Reduced from 0.8 */
+  }
+  
+  [data-theme="dark"] .glass-container {
+    background: rgba(0, 0, 0, 0.5);  /* Reduced from 0.7 */
+  }
 }
 
 .glass-container.footer-container {
