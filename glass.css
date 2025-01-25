@@ -10,7 +10,7 @@
     min-width: 380px;
     width: 100%;
     max-width: 800px;
-    margin: 1.5rem auto;  /* Changed to auto horizontal margins */
+    margin: -1rem auto 1.5rem;  /* Added negative margin-top */
 }
 
 .glass-container.footer-container {
@@ -28,7 +28,7 @@
         min-width: unset;
         width: 100%;
         padding: 1rem 1.5rem 2rem;
-        margin: 0.5rem auto;
+        margin: -1.5rem auto 0.5rem;  /* Increased negative margin from -0.5rem to -1.5rem */
         border-radius: 12px;
     }
 
@@ -43,7 +43,7 @@
 @media (max-width: 480px) {
     .glass-container {
         padding: 0.75rem 1rem 1.5rem;
-        margin: 0.25rem;
+        margin: -1rem auto 0.25rem;  /* Added negative margin for smaller screens */
         border-radius: 8px;
     }
 
