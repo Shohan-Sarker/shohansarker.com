@@ -21,3 +21,44 @@
     margin: 1rem auto;
     display: inline-block;  /* Keep inline-block for footer */
 }
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .glass-container {
+        min-width: unset;
+        width: 100%;
+        padding: 1rem 1.5rem 2rem;
+        margin: 0.5rem auto;
+        border-radius: 12px;
+    }
+
+    .glass-container.footer-container {
+        padding: 1rem 2rem;
+        margin: 1.5rem auto;
+        width: fit-content;
+        max-width: calc(100% - 2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .glass-container {
+        padding: 0.75rem 1rem 1.5rem;
+        margin: 0.25rem;
+        border-radius: 8px;
+    }
+
+    .glass-container.footer-container {
+        padding: 0.75rem 1.5rem;
+        margin: 1rem auto;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 320px) {
+    .glass-container {
+        margin: 0;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+}
