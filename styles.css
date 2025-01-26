@@ -401,7 +401,7 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 830px) {  /* Changed from 800px to 830px */
   body {
     padding: 1rem;
     padding-bottom: 2rem;
@@ -417,7 +417,7 @@ body {
 
   .theme-toggle {
     position: static;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem; /* Reduced from 2rem to 1rem */
     width: fit-content;
     backdrop-filter:
       blur(var(--theme-button-blur)) saturate(140%) brightness(1.05);
