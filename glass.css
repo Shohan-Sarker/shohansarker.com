@@ -1,23 +1,28 @@
-.glass-container {
-  --glass-opacity: 0.05;  /* Reduced from 0.1 */
+/* Base glass properties */
+:root {
+  --glass-border-radius: 16px;
+  --glass-padding: 2rem;
+  --glass-gap: 2rem;
   --glass-blur: 5px;
-  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
-  --glass-radius: 16px;
-  
-  position: relative;
-  background: rgba(255, 255, 255, var(--glass-opacity));
-  border-radius: var(--glass-radius);
-  border: var(--glass-border);
-  overflow: hidden;
-  display: block;  /* Changed from inline-block */
-  padding: 1.375rem 3.5rem 4rem;  /* Increased bottom padding */
-  min-width: 380px;
-  width: 100%;
-  max-width: 800px;
-  margin: -1rem auto 1.5rem;  /* Added negative margin-top */
+  --theme-button-blur: 12px;
+  --intro-padding: 3rem;
+  --links-padding: 2rem;
+  --footer-padding-x: 1.5rem;
+  --footer-padding-y: 0.75rem;
 }
 
-/* Glass effect base layer */
+/* Common glass container styles */
+.glass-container {
+  position: relative;
+  border-radius: var(--glass-border-radius);
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto var(--glass-gap);
+  isolation: isolate;
+}
+
+/* Glass effect base */
 .glass-container::before {
   content: '';
   position: absolute;
@@ -27,88 +32,81 @@
   z-index: -1;
 }
 
-/* Theme-specific styling */
+/* Dark theme glass styles */
 [data-theme="dark"] .glass-container {
-  --glass-opacity: 0.03;  /* Reduced from 0.05 */
   background: linear-gradient(
-    to bottom right,
-    rgba(255, 255, 255, 0.03),  /* Reduced from 0.05 */
-    rgba(255, 255, 255, 0.01)   /* Reduced from 0.02 */
+    135deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.01)
   );
+  border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 
-    0 4px 30px rgba(0, 0, 0, 0.1),
+    0 8px 32px rgba(0, 0, 0, 0.2),
     inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
+/* Light theme glass styles */
 [data-theme="light"] .glass-container {
-  --glass-opacity: 0.05;  /* Reduced from 0.1 */
   background: linear-gradient(
-    to bottom right,
-    rgba(255, 255, 255, 0.1),   /* Reduced from 0.2 */
-    rgba(255, 255, 255, 0.05)   /* Reduced from 0.1 */
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
   );
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 
-    0 4px 30px rgba(0, 0, 0, 0.05),
+    0 8px 32px rgba(0, 0, 0, 0.05),
     inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
-/* Fallback for browsers that don't support backdrop-filter */
-@supports not (backdrop-filter: blur(16px)) {
-  .glass-container {
-    background: rgba(255, 255, 255, 0.6);  /* Reduced from 0.8 */
-  }
-  
-  [data-theme="dark"] .glass-container {
-    background: rgba(0, 0, 0, 0.5);  /* Reduced from 0.7 */
-  }
+/* Specific container styles */
+.intro-container {
+  padding: var(--intro-padding) var(--glass-padding);
+  text-align: left;
 }
 
-.glass-container.footer-container {
-    padding: 0.75rem 2rem;
-    min-width: auto;
-    width: fit-content;
-    max-width: min(800px, 90vw);
-    margin: 1rem auto;
-    display: inline-block;  /* Keep inline-block for footer */
+.links-container {
+  padding: var(--links-padding) var(--glass-padding);
 }
 
-/* Mobile Responsive Design */
+.footer-container {
+  padding: var(--footer-padding-y) var(--footer-padding-x);
+  width: fit-content;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.footer-container .footer {
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Hover effects */
+.links-container:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+/* Mobile responsiveness */
 @media (max-width: 768px) {
-    .glass-container {
-        min-width: unset;
-        width: 100%;
-        padding: 1rem 1.5rem 2rem;
-        margin: -1.5rem auto 0.5rem;  /* Increased negative margin from -0.5rem to -1.5rem */
-        border-radius: 12px;
-    }
-
-    .glass-container.footer-container {
-        padding: 1rem 2rem;
-        margin: 1.5rem auto;
-        width: fit-content;
-        max-width: calc(100% - 2rem);
-    }
+  .glass-container {
+    margin-bottom: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
-    .glass-container {
-        padding: 0.75rem 1rem 1.5rem;
-        margin: -1rem auto 0.25rem;  /* Added negative margin for smaller screens */
-        border-radius: 8px;
-    }
-
-    .glass-container.footer-container {
-        padding: 0.75rem 1.5rem;
-        margin: 1rem auto;
-    }
+  .footer-container {
+    width: fit-content;
+    margin: 0 auto;
+  }
 }
 
-/* For very small screens */
-@media (max-width: 320px) {
-    .glass-container {
-        margin: 0;
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
-    }
+/* Fallback for browsers without backdrop-filter support */
+@supports not (backdrop-filter: blur(12px)) {
+  [data-theme="dark"] .glass-container {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  [data-theme="light"] .glass-container {
+    background: rgba(255, 255, 255, 0.7);
+  }
 }
