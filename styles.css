@@ -385,7 +385,7 @@ body {
 /* Footer */
 .footer {
   text-align: center;
-  padding: 0;
+  padding: 0.5rem !important; /* Added !important to prevent overrides */
   opacity: 0.8;
   display: flex;
   flex-direction: column;
@@ -476,7 +476,7 @@ body {
 
   .footer {
     gap: 0.25rem;
-    padding: 0;
+    /* Remove the padding: 0; declaration that was here */
   }
 }
 
