@@ -59,7 +59,7 @@
 
 /* Specific container styles */
 .header-container {
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: left;
   width: 100%;
   max-width: 960px;
@@ -100,6 +100,10 @@
   
   .links-container {
     padding: var(--links-padding) var(--glass-padding);
+  }
+
+  .header-container {
+    padding: 1rem 1rem 0.9rem 1rem;
   }
 }
 
