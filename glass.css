@@ -5,7 +5,7 @@
   --glass-gap: 2rem;
   --glass-blur: 5px;
   --theme-button-blur: 12px;
-  --intro-padding: 3rem;
+  --header-padding: 3rem;  /* renamed from --intro-padding */
   --links-padding: 2rem;
   --footer-padding-x: 1.5rem;
   --footer-padding-y: 0.75rem;
@@ -59,13 +59,13 @@
 }
 
 /* Specific container styles */
-.intro-container {
-  padding: var(--intro-padding) var(--glass-padding);
+.header-container {
+  padding: var(--header-padding) var(--glass-padding);
   text-align: left;
 }
 
 .links-container {
-  padding: var(--links-padding) var(--glass-padding);
+  padding: calc(var(--links-padding) + 8px) var(--glass-padding);
 }
 
 .footer-container {
@@ -90,6 +90,10 @@
 @media (max-width: 830px) {  /* Changed from 800px to 830px */
   .glass-container {
     margin-bottom: 1rem;
+  }
+  
+  .links-container {
+    padding: var(--links-padding) var(--glass-padding);
   }
 }
 

@@ -262,6 +262,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.75rem;
+  margin: 0.5rem 0;
   /* Slightly reduce default padding */
   text-decoration: none;
   font-size: clamp(1.5rem, 4vw, 2rem);
@@ -295,7 +296,7 @@ body {
 }
 
 .social-link:hover {
-  transform: translateZ(30px) scale(1.01);
+  transform: translateZ(24px) scale(1.01);
 }
 
 .social-link:hover::after,
@@ -448,15 +449,15 @@ body {
   }
 
   .social-link {
+    padding: 1.25rem;
+    margin: 0.25rem 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.25rem;
-    /* Keep existing mobile padding */
   }
 
   .social-link:hover {
-    transform: translateZ(20px) scale(1.02);
+    transform: translateZ(16px) scale(1.02);
   }
 
   .glass-container {
