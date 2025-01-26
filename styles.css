@@ -108,12 +108,14 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 960px;
+  width: 100%;
   margin: 0 auto;
-  padding-top: 1rem;
+  padding-top: 0; /* Remove top padding */
   display: flex;
   flex-direction: column;
   gap: 0; /* Remove gap since we're using margins in glass containers */
+  align-items: flex-start; /* Change from center to flex-start */
 }
 
 .main-content {
@@ -226,12 +228,14 @@ body {
 .name {
   font-size: clamp(3rem, 15vw, 7rem);
   line-height: 0.9;
-  margin-bottom: 1.5rem; /* Reduced margin */
+  margin-bottom: 1rem; /* Reduced from 1.5rem */
   font-weight: 500;
   /* Changed from 'bold' to 500 for medium weight */
   border-left: 8px solid var(--accent);
-  padding-left: 1rem;
+  padding: 1rem;
   font-variation-settings: 'SOFT' 100, 'WONK' 1;
+  text-align: left;
+  align-self: flex-start;
 }
 
 .tagline {
@@ -241,10 +245,12 @@ body {
   padding: 1rem;
   font-size: clamp(1rem, 3vw, 1.5rem);
   font-weight: bold;
-  margin-bottom: 0; /* Remove margin since container handles spacing */
+  margin: 0; /* Ensure no margin */
   width: fit-content;
   /* transform: rotate(-1deg); */
   /* Removed the rotation */
+  text-align: left;
+  align-self: flex-start;
 }
 
 /* Social Links */
@@ -430,8 +436,15 @@ body {
   }
 
   .container {
+    max-width: 100%;
+    padding: 0 1rem;
     padding-top: 0.5rem;
     gap: 1rem;
+  }
+
+  .header-container,
+  .links-container {
+    max-width: 100%;
   }
 
   .name {
