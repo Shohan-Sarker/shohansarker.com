@@ -65,7 +65,7 @@
   align-items: flex-start;
 }
 
-.links-container {
+.social-container {
   padding: calc(var(--links-padding) + 8px) var(--glass-padding);
   width: 100%;
   max-width: 960px;
@@ -86,11 +86,15 @@
 
 /* Update player container specific styles */
 .player-container {
-  padding: var(--glass-padding);
+  padding: var(--header-padding);
+  width: 300px;
+  max-width: 960px;
+  margin: 0 auto;
+  flex-shrink: 0;
 }
 
 /* Hover effects */
-.links-container:hover {
+.social-container:hover {
   transform: translateY(-2px);
   transition: transform 0.3s ease;
 }
@@ -101,7 +105,7 @@
     margin-bottom: 1rem;
   }
   
-  .links-container {
+  .social-container {
     padding: var(--links-padding) var(--glass-padding);
   }
 
@@ -110,7 +114,8 @@
   }
 
   .player-container {
-    padding: calc(var(--glass-padding) / 2);
+    padding: calc(var(--header-padding) / 2);
+    width: 100%;
   }
 }
 

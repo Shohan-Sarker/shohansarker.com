@@ -614,12 +614,14 @@ body {
 .player-container {
     width: 300px;
     flex-shrink: 0;
+    margin: 0 auto;
+    padding: var(--header-padding);
 }
 
 .player-content {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--glass-gap);
 }
 
 .song-info {
@@ -649,6 +651,8 @@ body {
 
     .player-container {
         width: 100%;
+        padding: calc(var(--header-padding) / 2);
+        margin-bottom: 1rem;
     }
 
     .player-content {
@@ -696,13 +700,6 @@ body {
     z-index: -1;
 }
 
-/* Update player container styles */
-.player-container {
-    width: 300px;
-    flex-shrink: 0;
-    margin-top: 2rem;
-}
-
 /* Update header container styles */
 .header-container {
     flex-grow: 1;
@@ -715,8 +712,8 @@ body {
 .social-container {
     max-width: 960px;
     width: 100%;
-    margin: 0 auto;
-    padding: 0 2rem;
+    margin: 0 auto 2rem;
+    padding: var(--glass-padding);
 }
 
 /* Update mobile responsive styles */
@@ -724,7 +721,8 @@ body {
     /* ...existing mobile styles... */
 
     .social-container {
-        padding: 0 1rem;
+        padding: var(--links-padding) var(--glass-padding);
+        margin-bottom: 1rem;
     }
 }
 
