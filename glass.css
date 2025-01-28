@@ -72,10 +72,10 @@
   margin: 0 auto;
 }
 
-.footer-container {
+.glass-container.footer-container {
   padding: var(--footer-padding-y) var(--footer-padding-x);
   width: fit-content;
-  margin: 0 auto;
+  margin: 4rem auto 0; /* Added margin-top */
   display: inline-block;
 }
 
@@ -124,6 +124,10 @@
     height: auto;
     min-height: auto;
     align-self: auto;
+  }
+
+  .glass-container.footer-container {
+    margin-top: 2rem; /* Reduced margin on mobile */
   }
 }
 
