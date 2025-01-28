@@ -148,3 +148,9 @@
     background: rgba(255, 255, 255, 0.7);
   }
 }
+
+/* Remove .top-section glass styles */
+.top-section::before,
+.top-section::after {
+    display: none;
+}
