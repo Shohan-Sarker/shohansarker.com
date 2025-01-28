@@ -107,15 +107,14 @@ body {
   background-size: 52px 26px;
 }
 
+/* Update container styles */
 .container {
-  max-width: 960px;
+  max-width: 100%; /* Changed from 960px */
   width: 100%;
   margin: 0 auto;
-  padding-top: 0; /* Remove top padding */
   display: flex;
   flex-direction: column;
-  gap: 0; /* Remove gap since we're using margins in glass containers */
-  align-items: flex-start; /* Change from center to flex-start */
+  align-items: center;
 }
 
 .main-content {
@@ -577,4 +576,159 @@ body {
   .social-link::after {
     display: none;
   }
+}
+
+/* Top section layout */
+.top-section {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.player-container {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.player-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.song-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Update header container for flex layout */
+.header-container {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 830px) {
+    .top-section {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .player-container {
+        width: 100%;
+    }
+
+    .player-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .album-art {
+        width: 100px;
+        height: 100px;
+    }
+
+    .song-info {
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+/* Add new top section styles */
+.top-section {
+    width: 100%;
+    min-height: 300px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    position: relative;
+}
+
+.top-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.03),
+        rgba(255, 255, 255, 0.01)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--glass-border-radius);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    z-index: -1;
+}
+
+/* Update player container styles */
+.player-container {
+    width: 300px;
+    flex-shrink: 0;
+    margin-top: 2rem;
+}
+
+/* Update header container styles */
+.header-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Add main container styles */
+.main-container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Update mobile responsive styles */
+@media (max-width: 830px) {
+    /* ...existing mobile styles... */
+
+    .top-section {
+        flex-direction: column;
+        padding: 1rem;
+        min-height: auto;
+    }
+
+    .player-container {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .header-container {
+        width: 100%;
+    }
+
+    .main-container {
+        padding: 0 1rem;
+    }
+}
+
+/* Update spacing between container elements */
+.glass-container.links-container {
+    margin-bottom: 2rem; /* Match the spacing between header and links */
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 830px) {
+    /* ...existing mobile styles... */
+
+    .glass-container.links-container {
+        margin-bottom: 1rem; /* Reduced spacing on mobile */
+    }
 }
