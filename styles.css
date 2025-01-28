@@ -645,6 +645,7 @@ body {
 .top-section {
     width: 100%;
     display: flex;
+    flex-direction: row-reverse;
     align-items: stretch; /* Changed from flex-start to stretch */
     gap: 2rem;
     margin-bottom: 2rem;
