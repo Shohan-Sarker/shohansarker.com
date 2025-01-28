@@ -1,0 +1,24 @@
+# robots.txt for shohansarker.com
+
+# Allow all user agents
+User-agent: *
+
+# Allow access to most content
+Allow: /
+Allow: /github
+Allow: /bluesky
+Allow: /instagram
+Allow: /facebook
+
+# Protect API endpoints and sensitive areas
+Disallow: /api/
+Disallow: /.env
+Disallow: /spotify.js
+Disallow: /glass.js
+Disallow: /script.js
+
+# Crawl-delay to prevent overwhelming the server
+Crawl-delay: 10
+
+# Once you add a sitemap, uncomment and update this line:
+# Sitemap: https://shohansarker.com/sitemap.xml
