@@ -251,7 +251,7 @@ body {
 .social-links {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
   transform-style: preserve-3d;
   width: 100%;
   /* Make it take full width of container */
@@ -261,9 +261,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.75rem;
-  margin: 0.5rem 0;
-  /* Slightly reduce default padding */
+  padding: 2rem;
+  margin: 0;
   text-decoration: none;
   font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: bold;
@@ -510,12 +509,12 @@ body {
   .social-links {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
   .social-link {
-    padding: 1.25rem;
-    margin: 0.25rem 0;
+    padding: 2rem;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -526,13 +525,15 @@ body {
   }
 
   .glass-container {
-    margin: 1rem;
-    padding: 1rem;
+    margin-bottom: 2rem;
   }
 
-  .glass-container.footer-container {
-    padding: 0.5rem 1.5rem;
-    margin: 0.5rem auto;
+  .glass-container:last-child {
+    margin-bottom: 0;
+  }
+
+  .glass-container.links-container {
+    margin-bottom: 2rem;
   }
 
   .footer {
@@ -710,8 +711,8 @@ body {
     align-items: flex-start;
 }
 
-/* Add main container styles */
-.main-container {
+/* Add social container styles */
+.social-container {
     max-width: 960px;
     width: 100%;
     margin: 0 auto;
@@ -722,22 +723,7 @@ body {
 @media (max-width: 830px) {
     /* ...existing mobile styles... */
 
-    .top-section {
-        flex-direction: column;
-        padding: 1rem;
-        min-height: auto;
-    }
-
-    .player-container {
-        width: 100%;
-        margin-top: 1rem;
-    }
-
-    .header-container {
-        width: 100%;
-    }
-
-    .main-container {
+    .social-container {
         padding: 0 1rem;
     }
 }

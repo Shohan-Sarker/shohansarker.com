@@ -28,6 +28,7 @@ function handleMobileLayout() {
     const topSection = document.querySelector('.top-section');
     const playerContainer = document.querySelector('.player-container');
     const headerContainer = document.querySelector('.header-container');
+    const socialContainer = document.querySelector('.social-container');
     const mainContainer = document.querySelector('.main-container');
     const mobileBreakpoint = 830;
     let isInMobileLayout = false;
@@ -38,7 +39,7 @@ function handleMobileLayout() {
         if (isMobile !== isInMobileLayout) {
             if (isMobile) {
                 topSection.parentNode.insertBefore(headerContainer, topSection);
-                topSection.parentNode.insertBefore(playerContainer, mainContainer);
+                topSection.parentNode.insertBefore(playerContainer, socialContainer.nextSibling);
                 topSection.remove();
             } else {
                 if (!document.querySelector('.top-section')) {
