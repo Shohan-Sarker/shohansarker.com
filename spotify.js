@@ -16,7 +16,6 @@ function updateProgress(duration, progress) {
     const progressBar = document.getElementById('progress');
     let currentProgress = progress;
     
-    // Update progress bar
     const updateProgressBar = () => {
         if (currentProgress >= duration) {
             clearInterval(progressInterval);
@@ -24,17 +23,19 @@ function updateProgress(duration, progress) {
             return;
         }
         
-        const percentage = (currentProgress / duration) * 100;
+        const percentage = Math.min((currentProgress / duration) * 100, 100);
         progressBar.style.width = `${percentage}%`;
         
-        // Update time display
         document.getElementById('player-status').textContent = 
             `Now Playing (${formatTime(currentProgress)} / ${formatTime(duration)})`;
             
         currentProgress += PROGRESS_UPDATE_INTERVAL;
     };
 
+    // Initial update
     updateProgressBar();
+    
+    // Start interval for continuous updates
     progressInterval = setInterval(updateProgressBar, PROGRESS_UPDATE_INTERVAL);
 }
 
