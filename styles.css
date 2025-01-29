@@ -396,10 +396,14 @@ body {
 }
 
 .album-art {
-  width: 150px;
-  height: 150px;
+  width: 100%; /* Change from fixed width to responsive */
+  height: auto; /* Make height auto to maintain aspect ratio */
+  max-width: 250px; /* Set maximum width */
+  max-height: 250px; /* Set maximum height */
+  aspect-ratio: 1 / 1; /* Ensure square aspect ratio */
   border-radius: var(--glass-border-radius);
   object-fit: cover;
+  margin: 0 auto;
 }
 
 .player-info {
@@ -440,6 +444,47 @@ body {
   font-size: 1rem;
   color: var(--text);
   opacity: 0.6;
+}
+
+.player-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--glass-gap);
+  height: 100%;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.time-indicators {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text);
+  opacity: 0.7;
+  margin-top: 0.25rem;
+}
+
+.time {
+  font-variant-numeric: tabular-nums;
+}
+
+.player-status {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text);
+  opacity: 0.7;
+  margin-top: auto;
 }
 
 /* Footer */
@@ -587,8 +632,10 @@ body {
   }
 
   .album-art {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    max-height: 100px;
   }
 
   .spotify-container {
@@ -662,6 +709,7 @@ body {
     display: flex;
     flex-direction: column;
     align-self: stretch;
+    overflow: hidden; /* Add this to contain the album art */
 }
 
 .player-content {
@@ -744,6 +792,8 @@ body {
     .album-art {
         width: 100px;
         height: 100px;
+        max-width: 100px;
+        max-height: 100px;
     }
 
     .song-info {

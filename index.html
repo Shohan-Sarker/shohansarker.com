@@ -30,17 +30,21 @@
             
             <div class="glass-container player-container">
                 <div class="player-content">
-                    <img id="album-art" class="album-art" src="/api/placeholder/150/150" alt="Album Art">
+                    <img id="album-art" class="album-art" src="/api/placeholder/250/250" alt="Album Art">
                     <div class="song-info">
-                        <div id="song-title">Not Playing</div>
-                        <div id="artist-name">No Artist</div>
+                        <div id="song-title" class="song-title"></div>
+                        <div id="artist-name" class="artist-name"></div>
                         <div class="progress-container">
                             <div class="progress-bar">
                                 <div id="progress" class="progress"></div>
                             </div>
-                            <div id="player-status">Not connected to Spotify</div>
+                            <div class="time-indicators">
+                                <span id="current-time" class="time">0:00</span>
+                                <span id="total-time" class="time">0:00</span>
+                            </div>
                         </div>
                     </div>
+                    <div id="player-status" class="player-status"></div>
                 </div>
             </div>
         </div>

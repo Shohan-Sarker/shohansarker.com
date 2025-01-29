@@ -26,8 +26,12 @@ function updateProgress(duration, progress) {
         const percentage = Math.min((currentProgress / duration) * 100, 100);
         progressBar.style.width = `${percentage}%`;
         
-        document.getElementById('player-status').textContent = 
-            `Now Playing (${formatTime(currentProgress)} / ${formatTime(duration)})`;
+        // Update time indicators instead of player status
+        document.getElementById('current-time').textContent = formatTime(currentProgress);
+        document.getElementById('total-time').textContent = formatTime(duration);
+        
+        // Update status without time
+        document.getElementById('player-status').textContent = 'Now Playing';
             
         currentProgress += PROGRESS_UPDATE_INTERVAL;
     };
@@ -50,6 +54,8 @@ async function updatePlayer() {
             document.getElementById('player-status').textContent = 'Unable to fetch song data';
             document.getElementById('progress').style.width = '0%';
             document.getElementById('album-art').src = '/api/placeholder/150/150';
+            document.getElementById('current-time').textContent = '0:00';
+            document.getElementById('total-time').textContent = '0:00';
             if (progressInterval) clearInterval(progressInterval);
             return;
         }
@@ -72,18 +78,24 @@ async function updatePlayer() {
             if (progressInterval) clearInterval(progressInterval);
             document.getElementById('progress').style.width = '100%';
             document.getElementById('player-status').textContent = '⌛ Last Played';
+            document.getElementById('current-time').textContent = '0:00';
+            document.getElementById('total-time').textContent = '0:00';
         } else if (is_playing) {
             updateProgress(item.duration_ms, progress_ms);
         } else {
             if (progressInterval) clearInterval(progressInterval);
             document.getElementById('progress').style.width = `${(progress_ms / item.duration_ms) * 100}%`;
             document.getElementById('player-status').textContent = '⏸ Paused';
+            document.getElementById('current-time').textContent = formatTime(progress_ms);
+            document.getElementById('total-time').textContent = formatTime(item.duration_ms);
         }
     } catch (error) {
         console.error('Error fetching Spotify data:', error);
         document.getElementById('player-status').textContent = 'Unable to connect to Spotify';
         document.getElementById('song-title').textContent = 'Connection Error';
         document.getElementById('artist-name').textContent = 'Please try again later';
+        document.getElementById('current-time').textContent = '0:00';
+        document.getElementById('total-time').textContent = '0:00';
         if (progressInterval) clearInterval(progressInterval);
     }
 }
