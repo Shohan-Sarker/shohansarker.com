@@ -396,11 +396,11 @@ body {
 }
 
 .album-art {
-  width: 100%; /* Change from fixed width to responsive */
-  height: auto; /* Make height auto to maintain aspect ratio */
-  max-width: 250px; /* Set maximum width */
-  max-height: 250px; /* Set maximum height */
-  aspect-ratio: 1 / 1; /* Ensure square aspect ratio */
+  width: 100%;
+  height: auto;
+  max-width: 150px;
+  max-height: 150px;
+  aspect-ratio: 1 / 1;
   border-radius: var(--glass-border-radius);
   object-fit: cover;
   margin: 0 auto;
@@ -414,7 +414,7 @@ body {
 }
 
 .song-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem; /* Reduced from 1.5rem */
   font-weight: bold;
   color: var(--text);
 }
